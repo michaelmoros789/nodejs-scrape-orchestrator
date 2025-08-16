@@ -37,7 +37,6 @@ const TRACK_FILE = path.resolve("last-run.txt");
 // Freeze the object to make it immutable
 const config = Object.freeze({
     SHEET_ID,
-    SHEET_NAME,
     RANGE,
     GOOGLE_CREDENTIALS_PATH,
     TZ,

@@ -4,6 +4,8 @@ import { appendToGoogleSheet, hasRunToday, markAsRunToday } from "./helpers.js";
 import productA from "./scrapers/product-a.js";
 import productB from "./scrapers/product-b.js";
 import { logger } from "./logger.js";
+import config from "./config.js";
+const { CRON_SCHEDULE } = config;
 
 const jobs = [
     {
@@ -73,7 +75,7 @@ async function runScrapeJobs() {
 runScrapeJobs();
 
 // Schedule the job to run daily at 1:00 AM Manila time
-cron.schedule("0 1 * * *", async () => {
+cron.schedule(CRON_SCHEDULE, async () => {
     logger.info("Running scheduled scrape at 1:00 AM...");
     await runScrapeJobs();
 });

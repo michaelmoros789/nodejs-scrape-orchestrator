@@ -5,10 +5,7 @@ import { google } from "googleapis";
 import fs from "fs";
 import { logger } from "./logger.js";
 import config from "./config.js";
-const { TRACK_FILE, GOOGLE_CREDENTIALS_PATH, SHEET_ID, SHEET_NAME, TZ } =
-    config;
-
-const RANGE = `${SHEET_NAME}!A:D`;
+const { TRACK_FILE, GOOGLE_CREDENTIALS_PATH, SHEET_ID, TZ, RANGE } = config;
 
 async function appendToGoogleSheet(rows) {
     logger.info("🔐 Authenticating with Google Sheets...");

@@ -1,9 +1,6 @@
 import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const LOG_FILE = path.join(__dirname, "logs.txt");
+import config from "./config.js";
+const { LOG_FILE } = config;
 
 const LEVELS = {
     info: "INFO",
